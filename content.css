@@ -1,0 +1,10 @@
+#lst-btn{position:fixed;right:20px;bottom:20px;z-index:99999;padding:10px 16px;border:0;border-radius:10px;
+  background:#ffa116;color:#1a1300;font:600 14px/1 system-ui,sans-serif;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.35);
+  animation:lst-in .45s cubic-bezier(.2,1.4,.4,1) both;transition:transform .15s,filter .15s,background .3s}
+#lst-btn:hover:not(:disabled){filter:brightness(1.08);transform:translateY(-2px)}
+#lst-btn:active:not(:disabled){transform:scale(.96)}
+#lst-btn.done{background:#2cbb5d;color:#04210e;cursor:default}
+#lst-btn.pop{animation:lst-pop .5s cubic-bezier(.2,1.6,.4,1)}
+@keyframes lst-in{from{transform:translateY(30px) scale(.9);opacity:0}}
+@keyframes lst-pop{40%{transform:scale(1.15)}}
+@media (prefers-reduced-motion:reduce){#lst-btn{animation:none;transition:none}}

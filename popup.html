@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Leet Streak Together</title><link rel="stylesheet" href="popup.css"></head>
+<body>
+  <div id="toast" role="status" hidden></div>
+  <header>
+    <h1><span class="logo">🔥</span> Leet Streak Together</h1>
+    <div id="total" hidden>⭐ <b id="totalNum">0</b></div>
+  </header>
+
+  <section id="perm" hidden>
+    <p>This extension needs access to <b>leetcode.com</b> to read public profiles and solve calendars.</p>
+    <button id="permBtn">Allow access to leetcode.com</button>
+    <div id="permMsg" class="msg" role="status"></div>
+  </section>
+
+  <section id="setup" hidden>
+    <p>Which LeetCode account is yours?</p>
+    <div class="row">
+      <input id="meInput" placeholder="your leetcode username" autocomplete="off" spellcheck="false">
+      <button id="meSave">Save</button>
+    </div>
+    <button id="meDetect" class="link">Detect from my logged-in session</button>
+    <div id="setupMsg" class="msg" role="status"></div>
+  </section>
+
+  <section id="main" hidden>
+    <div class="row">
+      <input id="friendInput" placeholder="Add a friend by LeetCode username" autocomplete="off" spellcheck="false">
+      <button id="addBtn">Add</button>
+    </div>
+    <div id="msg" class="msg" role="status"></div>
+    <div id="tools" hidden>
+      <div id="filters" role="tablist" aria-label="Filter streaks"></div>
+      <select id="sort" aria-label="Sort streaks">
+        <option value="smart">Urgent first</option>
+        <option value="streak">Longest</option>
+        <option value="points">Points</option>
+        <option value="name">Name</option>
+        <option value="new">Newest</option>
+      </select>
+    </div>
+    <div id="list"></div>
+    <footer>
+      <span>Signed in as <b id="meName"></b> · <button id="changeMe" class="link">change</button></span>
+      <button id="refresh" class="link" title="Refresh">↻ refresh</button>
+    </footer>
+  </section>
+  <script type="module" src="popup.js"></script>
+</body></html>

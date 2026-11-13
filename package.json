@@ -1,0 +1,17 @@
+{
+  "name": "leet-streak-together",
+  "private": true,
+  "type": "module",
+  "description": "Dev tooling for the Leet Streak Together browser extension. The extension itself has no build step or dependencies.",
+  "scripts": {
+    "test": "node --test tests/lib.test.mjs",
+    "test:live": "node --test tests/live.test.mjs",
+    "preview": "node tests/preview-server.mjs",
+    "lint": "npx --yes web-ext lint --source-dir . --ignore-files \"dist\" \"dist/**\" \"tests\" \"tests/**\" \"docs\" \"docs/**\" \"package.json\" \"README.md\" \"LICENSE\"",
+    "build": "npx --yes web-ext build --source-dir . --artifacts-dir dist --overwrite-dest --ignore-files \"dist\" \"dist/**\" \"tests\" \"tests/**\" \"docs\" \"docs/**\" \"package.json\" \"README.md\" \"LICENSE\"",
+    "firefox": "npx --yes web-ext run --source-dir . --ignore-files \"dist\" \"dist/**\" \"tests\" \"tests/**\" \"docs\" \"docs/**\" \"package.json\" \"README.md\" \"LICENSE\" --start-url https://leetcode.com/problemset/",
+    "screenshots": "node tests/screenshots.mjs"
+  },
+  "license": "MIT",
+  "author": "Lakshya Agrawal"
+}

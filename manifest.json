@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Leet Streak Together",
+  "version": "1.2.1",
+  "description": "Keep your LeetCode streak alive with a friend. Solve one problem a day each, earn a point each, and compare progress.",
+  "permissions": ["storage", "alarms", "notifications"],
+  "host_permissions": ["https://leetcode.com/*"],
+  "background": {
+    "service_worker": "background.js",
+    "scripts": ["background.js"],
+    "type": "module"
+  },
+  "icons": { "16": "icon-16.png", "32": "icon-32.png", "48": "icon-48.png", "96": "icon-96.png", "128": "icon.png" },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Leet Streak Together",
+    "default_icon": { "16": "icon-16.png", "32": "icon-32.png", "48": "icon-48.png" }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://leetcode.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "leet-streak-together@leet-streak-together.addon",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": { "required": ["none"] }
+    }
+  }
+}
