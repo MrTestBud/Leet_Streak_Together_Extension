@@ -36,6 +36,8 @@ Keep your LeetCode streak alive **with friends**. A browser extension for Firefo
 
 ### Firefox
 
+Available On Add-On Store: https://addons.mozilla.org/en-US/firefox/addon/leet-streak-together/
+
 Temporary install for trying it out:
 
 1. Open `about:debugging#/runtime/this-firefox`
